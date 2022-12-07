@@ -16,6 +16,7 @@
     --secondary-bg-color:#F5F4FA;
     --buttons-color: #F5F4FA;
     --bg-color-html: #ffffff;
+    --timing-function: 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .list {   
@@ -146,6 +147,7 @@ footer {
 
 
 .site-nav .link {
+    position: relative;
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -162,7 +164,28 @@ footer {
 
 .site-nav .link.carent {
     color: var(--accent-text-color);
+
 }
+
+
+.site-nav .link::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    background: #2196F3;
+    border-radius: 2px;
+    opacity: 0;
+
+}
+
+.site-nav .link.carent::after {
+    opacity: 1;
+}
+
 
 header .contacts {
     display: flex ;
@@ -205,6 +228,7 @@ header .contacts {
 .contact-link:focus {
     color: var(--accent-text-color);
     fill: var(--accent-text-color);
+  
 }
 
 
@@ -274,6 +298,7 @@ border-color: var(--accent-text-color);
     background-color: var(--primery-bg-color);
     border-color: var(--primery-bg-color);
     cursor: pointer;
+ 
     }
 
 
@@ -478,6 +503,7 @@ border-color: var(--accent-text-color);
  {
     fill: var(--secondary-text-color);
     background-color: var(--accent-text-color);
+  
 }
 
 
@@ -524,6 +550,7 @@ border-color: var(--accent-text-color);
 .claents-link:focus {
     fill: var(--accent-text-color);
     border-color: var(--accent-text-color);
+    
 }
 
 .claents-ikon {
@@ -650,6 +677,7 @@ address .contact-link {
     background-color: var(--accent-text-color);
     cursor: pointer;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    
    }
 
  /* --------------works---------------- */
@@ -709,8 +737,96 @@ address .contact-link {
 .project-link {
     display: block;
 }
+.project-image {
+    position: relative;
+    overflow: hidden;
+
+}
+
+
+.project-image::after {
+    content:"Технокрик це майданчик розростання коронавірусу. Компанія використовує цю платформу для цифрового шпигунства та атак на захищені ресурси конкурентів";
+
+    position: absolute;
+    display: block;
+
+    transform: translateY(100%);
+    transition: transform var(--timing-function);
+
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 63px 24px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: calc(28 / 18);
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    background: rgba(33, 150, 243, 0.9);
+
+}
+.project-link:hover .project-image::after {
+    transform: translateY(0%);
+}
 
 .project-link:hover,
 .project-link:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    
+
+}
+/* ------------------modal-windou------------- */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 528px;
+    min-height: 581px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+}
+
+.bn-close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+
+    top: 8px;
+    left: calc(100% - 38px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+.icon-close {
+    display: block;;
+       
+
 }
