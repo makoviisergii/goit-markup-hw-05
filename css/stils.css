@@ -156,6 +156,11 @@ footer {
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
+
+    transition-property: color, fill, background-color, border-color, box-shadow;
+    transition: var(--timing-function);
+
+
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -175,7 +180,7 @@ footer {
     width: 100%;
     height: 4px;
     left: 0;
-    bottom: 0;
+    bottom: -1px;
     background: #2196F3;
     border-radius: 2px;
     opacity: 0;
@@ -215,7 +220,10 @@ header .contacts {
     align-items: center;
     gap: 10px;
     fill: #757575;
-   
+    
+
+    transition-property: color, fill, background-color, border-color, box-shadow;
+    transition: var(--timing-function);
   
 }
 
@@ -290,6 +298,10 @@ border-radius: 4px;
 padding: 10px 32px;
 
 border-color: var(--accent-text-color);
+
+transition-property: color, fill, background-color, border-color;
+transition: var(--timing-function);
+
 }
     
 .hero .button:hover,
@@ -496,6 +508,9 @@ border-color: var(--accent-text-color);
     align-items: center;
     justify-content: center;   
     fill: #AFB1B8; 
+
+    transition-property: color, fill, background-color, border-color;
+    transition: var(--timing-function);
 }
 
 .team-soc-link:hover,
@@ -544,6 +559,9 @@ border-color: var(--accent-text-color);
     align-items: center;
     justify-content: center; 
     fill: #AFB1B8;   
+
+        transition-property: color, fill, background-color, border-color;
+        transition: var(--timing-function);
 }
 
 .claents-link:hover,
@@ -584,10 +602,16 @@ border-color: var(--accent-text-color);
     color: var(--secondary-text-color);
     font-style: normal;
     line-height: 1.71;
+
+    transition-property: color, fill, background-color, border-color;
+    transition: var(--timing-function);
+
 }
 .address-link:hover,
 .address-link:focus {
      color: var(--accent-text-color);
+
+
 }
 address .contact-link {
     color: rgba(255, 255, 255, 0.6);
@@ -665,6 +689,9 @@ address .contact-link {
     border-radius: 4px;
     padding: 6px 22px;
     border: none;
+
+        transition-property: color, fill, background-color, border-color, box-shadow;
+            transition: var(--timing-function);
  }
 
 .oll {
@@ -767,9 +794,15 @@ address .contact-link {
     color: #FFFFFF;
     background: rgba(33, 150, 243, 0.9);
 
+    transition-property: color, fill, background-color, border-color, box-shadow;
+    transition: var(--timing-function);
+
 }
-.project-link:hover .project-image::after {
+.project-link:hover .project-image::after,
+.project-link:focus .project-image::after {
     transform: translateY(0%);
+
+    
 }
 
 .project-link:hover,
@@ -786,6 +819,10 @@ address .contact-link {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+
+    transition-property: visibility, opacity;
+    transition: var(--timing-function);
+
 }
 
 .backdrop.is-hidden {
@@ -830,3 +867,4 @@ address .contact-link {
        
 
 }
+
